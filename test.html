@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+        }
+        #box{
+            width: 100%;
+            height: 350px;
+            /*overflow: hidden;*/
+        }
+        .hea-d1{
+            width: 232px;
+            height: 350px;
+            background-color: #74b9f9;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 2;
+        }
+        .hea-d1>ul{
+            padding-top: 15px;
+        }
+        .hea-d1>ul li{
+            margin-left: 5%;
+            width: 90%;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border-bottom: 1px solid #647b91;
+        }
+        .hea-d1>ul a{
+            text-decoration: none;
+            font-size: 18px;
+            color: #dbdbdb;
+        }
+        .hea-d1>ul li.on{
+            background-color:dodgerblue;
+            color: white;
+        }
+        #box>img{
+            width: 100%;
+            height: 350px;
+            display: none;
+        }
+        #box>img.on{display: block;}
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function (){
+            var timer=null;
+
+            //鼠标悬停时改变
+            $('.hea-d1 li').mouseover(function (){
+
+                $('#box img').removeClass('on');
+                $('.hea-d1 li').removeClass('on');
+                //添加
+                $(this).addClass('on');
+                //$(this).index()获取按钮的下标--因为按钮下标和div的下标一一对应
+                $('#box img').eq($(this).index()).addClass('on');
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="box">
+<div class="hea-d1">
+    <ul>
+        <li><a href="javascript:;">楚乔传：赵丽颖 林更新</a></li>
+        <li><a href="javascript:;">奔跑吧：邓超 李晨 陈赫</a></li>
+        <li><a href="javascript:;">欢乐颂2：刘涛 王子文</a></li>
+        <li><a href="javascript:;">加勒比海盗：海盗船长</a></li>
+        <li><a href="javascript:;">奇异博士：本尼迪克特</a></li>
+        <li><a href="javascript:;">海贼王：路飞 香吉士 </a></li>
+        <li><a href="javascript:;">在下坂本，有何贵干</a></li>
+    </ul>
+</div>
+
+    <img class="on" src="../img/cqz.jpg"/>
+    <img src="../img/bpb.jpg"/>
+    <img src="../img/hls2.jpg"/>
+    <img src="../img/jlbhd.jpg"/>
+    <img src="../img/qybs.jpg"/>
+    <img src="../img/hzw.jpg"/>
+    <img src="../img/zxbb.jpg"/>
+</div>
+</body>
+</html>
